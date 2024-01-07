@@ -1,0 +1,196 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-4">
+          <label>Titulo</label>
+          <input type="hidden" formControlName="id" />
+          <input
+            type="text"
+            class="form-control"
+            placeholder="titulo de ejemplo"
+            formControlName="title"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label>Subtitulo</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="subtitulo"
+            formControlName="subtitle"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label>Tipo</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Tipo de trabajo"
+            formControlName="type"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label>Imagen</label>
+          <input
+            type="file"
+            class="form-control"
+            formControlName="image"
+            (change)="uploadImage($event)"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label>Descripcion</label>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            formControlName="description"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </form>
+    </div>
+    <div class="col-6">
+      <ng-container *ngFor="let work of works">
+        <div class="card-work col-12 mb-4">
+          <div class="images">
+            <img *ngIf="work.image" [src]="work.image" width="200" />
+          </div>
+          <div class="card-work_description">
+            <div class="d-flex">
+              <div class="card-work_description-titlegroup">
+                <p>{{ work.title }}</p>
+                <p>{{ work.subtitle }}</p>
+              </div>
+              <div class="ms-4 card-work_description-tag">
+                <span>{{ work.type }}</span>
+              </div>
+            </div>
+            <div class="d-flex btn-group">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="deleteWork(work)"
+              >
+                Borrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary mr-1"
+                (click)="editWork(work)"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Editar
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  #exampleModal
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formulario">
+          <div class="form-group mb-4">
+            <label>Titulo</label>
+            <input type="hidden" formControlName="id" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="titulo de ejemplo"
+              formControlName="title"
+              required
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Subtitulo</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="subtitulo"
+              formControlName="subtitle"
+              required
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Tipo</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tipo de trabajo"
+              formControlName="type"
+              required
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Imagen</label>
+            <input
+              type="file"
+              accept="image/png, image/gif, image/jpeg, image/webp"
+              class="form-control"
+              formControlName="image"
+              (change)="uploadImage($event)"
+              required
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label>Descripcion</label>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              formControlName="description"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          cancelar
+        </button>
+        <button
+          #closeModal
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="guardarCambios()"
+        >
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

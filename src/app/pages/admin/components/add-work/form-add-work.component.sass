@@ -1,0 +1,53 @@
+:host
+    .card-work
+        border-radius: 10px
+        padding: 20px
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        width: 100%
+        height: 294px
+        background-size: cover
+        cursor: pointer
+        border: 1px solid #000000
+        .images
+            width: 100%
+            img
+                width: 100%
+                height: 180px
+                object-fit: cover
+        &_description
+            background-color: #fff
+            display: flex
+            justify-content: space-between
+            width: 100%
+            border-radius: 10px
+            padding: 10px
+            &-titlegroup
+                display: flex
+                flex-direction: column
+                p
+                    &:nth-of-type(1)
+                        font-size: 16px
+                        font-weight: bold
+                        margin: 0 0 10px 0
+                        color: #333333
+                        &::first-letter
+                            text-transform: uppercase
+                    &:nth-of-type(2)
+                        font-size: 14px
+                        font-weight: 500
+                        margin: 0 0 0 0
+            &-tag
+                width: auto
+                height: 23px
+                flex-shrink: 0
+                color: #ffffff
+                border-radius: 4px
+                background-color: #38BCD5
+                span
+                    color: #ffffff
+                    text-transform: uppercase
+                    font-size: 12px
+                    font-weight: bold
+                    padding: 4px 8px

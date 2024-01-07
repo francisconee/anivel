@@ -1,0 +1,15 @@
+<header>
+  <div class="box d-flex align-items-center w-100 justify-content-between">
+    <h6 *ngIf="router.url === '/admin'">
+      Administrador de contenidos {{ isLoggedIn | json }}
+    </h6>
+    <h6 *ngIf="router.url === '/registrarse'">Registrarse</h6>
+    <button
+      *ngIf="isLoggedIn"
+      (click)="onClick()"
+      class="btn btn-outline-danger"
+    >
+      Cerrar sesion
+    </button>
+  </div>
+</header>
