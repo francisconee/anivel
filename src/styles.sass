@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/functions"
+@import "../node_modules/bootstrap/scss/variables"
+@import "../node_modules/bootstrap/scss/mixins"
+
+@font-face
+    font-family: 'Mona Sans'
+    src: url('assets/fonts/MonaSans-Regular.eot')
+    src: url('assets/fonts/MonaSans-Regular.eot?#iefix') format("embedded-opentype"), url('assets/fonts/MonaSans-Regular.woff2') format("woff2"), url('assets/fonts/MonaSans-Regular.woff') format("woff"), url('assets/fonts/MonaSans-Regular.ttf') format("truetype"), url('assets/fonts/MonaSans-Regular.svg#MonaSans-Regular') format("svg")
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+@font-face
+    font-family: 'Mona Sans'
+    src: url('assets/fonts/MonaSans-Bold.eot')
+    src: url('assets/fonts/MonaSans-Bold.eot?#iefix') format("embedded-opentype"), url('assets/fonts/MonaSans-Bold.woff2') format("woff2"), url('assets/fonts/MonaSans-Bold.woff') format("woff"), url('assets/fonts/MonaSans-Bold.ttf') format("truetype"), url('assets/fonts/MonaSans-Bold.svg#MonaSans-Bold') format("svg")
+    font-weight: bold
+    font-style: normal
+    font-display: swap
+@font-face
+    font-family: 'Mona Sans'
+    src: url('assets/fonts/MonaSans-SemiBold.eot')
+    src: url('assets/fonts/MonaSans-SemiBold.eot?#iefix') format("embedded-opentype"), url('assets/fonts/MonaSans-SemiBold.woff2') format("woff2"), url('assets/fonts/MonaSans-SemiBold.woff') format("woff"), url('assets/fonts/MonaSans-SemiBold.ttf') format("truetype"), url('assets/fonts/MonaSans-SemiBold.svg#MonaSans-SemiBold') format("svg")
+    font-weight: 600
+    font-style: normal
+    font-display: swap
+@font-face
+    font-family: 'Mona Sans'
+    src: url('assets/fonts/MonaSans-Black.eot')
+    src: url('assets/fonts/MonaSans-Black.eot?#iefix') format("embedded-opentype"), url('assets/fonts/MonaSans-Black.woff2') format("woff2"), url('assets/fonts/MonaSans-Black.woff') format("woff"), url('assets/fonts/MonaSans-Black.ttf') format("truetype"), url('assets/fonts/MonaSans-Black.svg#MonaSans-Black') format("svg")
+    font-weight: 900
+    font-style: normal
+    font-display: swap
+@font-face
+    font-family: 'Mona Sans'
+    src: url('assets/fonts/MonaSans-Light.eot')
+    src: url('assets/fonts/MonaSans-Light.eot?#iefix') format("embedded-opentype"), url('assets/fonts/MonaSans-Light.woff2') format("woff2"), url('assets/fonts/MonaSans-Light.woff') format("woff"), url('assets/fonts/MonaSans-Light.ttf') format("truetype"), url('assets/fonts/MonaSans-Light.svg#MonaSans-Light') format("svg")
+    font-weight: 300
+    font-style: normal
+    font-display: swap
+$gray: #555555
+$gray-light: #555555
+$gray-lighter: #f5f5f5
+$white: #ffffff
+$purple: #524C9A
+$purple-light: #7771c0
+*, body, a
+    color: $gray
+    font-family: 'Mona Sans'
+.card
+    background-color: $white
+    padding: 16px
+    border-radius: 10px
+    border: 0px
+    box-shadow: 0px 4px 17px -1px rgba(0, 0, 0, 0.08)
+input.form-control
+    height: 42px
+    padding: 10px
+    background-color: $gray-lighter
+    color: $gray-light
+    border: 0px
+textarea.form-control
+    background-color: $gray-lighter
+    color: $gray-light
+    border: 0px
+button.btn-primary
+    background-color: $purple
+    padding: 8px 10px
+    border: 0px
+    &:hover
+        background-color: $purple-light
+button.btn-filtro
+    border: 1px solid $purple
+    color: $purple
+    &:hover
+        border: 1px solid $purple
+        background-color: $purple
+        color: $white
+.form-error
+    color: $red-400
+    font-size: 12px
+    margin: 5px 0 0 0
+.btn:disabled
+    background-color: $purple
+    opacity: .5
+h4.title
+    font-weight: 800
+    margin: 0 0 120px 0
+    text-align: center
+    font-size: 36px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    &::after
+        content: ''
+        position: absolute
+        display: block
+        background-color: $purple
+        width: 20px
+        height: 4px
+        bottom: -20px
+h3
+    color: $gray
+    font-size: 28px
+    font-weight: 800
+    line-height: normal
+.tag
+    width: auto
+    height: 23px
+    flex-shrink: 0
+    color: #ffffff
+    border-radius: 4px
+    background-color: #38BCD5
+    span
+        color: #ffffff
+        text-transform: uppercase
+        font-size: 12px
+        font-weight: bold
+        padding: 4px 8px
+
+.lds-roller
+    display: inline-block
+    position: relative
+    width: 80px
+    height: 80px
+.lds-roller div
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    transform-origin: 40px 40px
+.lds-roller div:after
+    content: " "
+    display: block
+    position: absolute
+    width: 7px
+    height: 7px
+    border-radius: 50%
+    background: $purple-light
+    margin: -4px 0 0 -4px
+.lds-roller div:nth-child(1)
+    animation-delay: -0.036s
+.lds-roller div:nth-child(1):after
+    top: 63px
+    left: 63px
+.lds-roller div:nth-child(2)
+    animation-delay: -0.072s
+.lds-roller div:nth-child(2):after
+    top: 68px
+    left: 56px
+.lds-roller div:nth-child(3)
+    animation-delay: -0.108s
+.lds-roller div:nth-child(3):after
+    top: 71px
+    left: 48px
+.lds-roller div:nth-child(4)
+    animation-delay: -0.144s
+.lds-roller div:nth-child(4):after
+    top: 72px
+    left: 40px
+.lds-roller div:nth-child(5)
+    animation-delay: -0.18s
+.lds-roller div:nth-child(5):after
+    top: 71px
+    left: 32px
+.lds-roller div:nth-child(6)
+    animation-delay: -0.216s
+.lds-roller div:nth-child(6):after
+    top: 68px
+    left: 24px
+.lds-roller div:nth-child(7)
+    animation-delay: -0.252s
+.lds-roller div:nth-child(7):after
+    top: 63px
+    left: 17px
+.lds-roller div:nth-child(8)
+    animation-delay: -0.288s
+.lds-roller div:nth-child(8):after
+    top: 56px
+    left: 12px
+@keyframes lds-roller
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+#toast-container
+    .toast-error
+        .toast-message
+            color: #ffffff!important
