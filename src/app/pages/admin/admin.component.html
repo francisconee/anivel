@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row p-0">
+    <div class="col-3 p-0">
+      <app-menu-admin></app-menu-admin>
+    </div>
+    <div class="col-9 p-0">
+      <app-header-admin></app-header-admin>
+      <div class="content">
+        <ng-container *ngIf="router.url === '/admin'">
+          <app-form-add-work></app-form-add-work>
+        </ng-container>
+        <ng-container
+          *ngIf="
+            router.url != '/admin/add-work' && router.url === '/admin/works'
+          "
+        >
+          <div class="row me-0"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<div class="card-work">
+  <div class="card-work_img">
+    <img [src]="work.image" alt="" />
+  </div>
+  <div class="card-work_description">
+    <div class="card-work_description-titlegroup">
+      <p>{{ work.title }}</p>
+      <p>{{ work.subtitle }}</p>
+      <p>
+        {{ work.description }}
+      </p>
+    </div>
+    <div class="card-work_description-tag">
+      <span>{{ work.type }}</span>
+    </div>
+  </div>
+</div>

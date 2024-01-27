@@ -1,0 +1,11 @@
+<ul class="list-unstyled mb-0 d-flex menu">
+  <li *ngFor="let item of menu; last as isLast">
+    <a
+      [routerLink]="[item.link]"
+      class="text-decoration-none"
+      [ngClass]="{ 'me-0': isLast, 'me-4': !isLast }"
+      >{{ item.name }}</a
+    >
+  </li>
+</ul>
+<router-outlet></router-outlet>

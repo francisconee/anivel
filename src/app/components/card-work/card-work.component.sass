@@ -1,0 +1,76 @@
+:host
+    .card-work
+        border-radius: 10px
+        display: flex
+        align-items: center
+        flex-direction: column
+        width: 298px
+        height: 350px
+        background-size: cover
+        cursor: pointer
+        background-color: #fbfbfb
+        position: relative
+        transition: all 0.3s ease-in-out
+        &_img
+            width: 100%
+            border-radius: 10px 10px 0 0
+            img
+                width: 100%
+                height: 180px
+                object-fit: cover
+                border-radius: 10px 10px 0 0
+        &_description
+            display: flex
+            justify-content: space-between
+            width: 100%
+            border-radius: 10px
+            padding: 10px
+            position: relative
+            &-titlegroup
+                display: flex
+                flex-direction: column
+                p
+                    &:nth-of-type(1)
+                        font-size: 16px
+                        font-weight: bold
+                        margin: 0 0 0px 0
+                        color: #333333
+                        &::first-letter
+                            text-transform: uppercase
+                    &:nth-of-type(2)
+                        font-size: 14px
+                        font-weight: 600
+                        margin: 0 0 0 0
+                        color: #666666
+                    &:nth-of-type(3)
+                        font-size: 12px
+                        display: -webkit-box
+                        font-weight: 500
+                        width: 100%
+                        margin: 20px 0 0 0
+                        color: #222222
+                        line-height: 22px
+                        overflow: hidden
+                        -webkit-line-clamp: 3
+                        -webkit-box-orient: vertical
+                        white-space: wrap
+            &-tag
+                width: auto
+                height: 23px
+                flex-shrink: 0
+                color: #ffffff
+                border-radius: 4px
+                background-color: #38BCD5
+                position: absolute
+                top: -170px
+                right: 10px
+                span
+                    color: #ffffff
+                    text-transform: uppercase
+                    font-size: 12px
+                    font-weight: bold
+                    padding: 4px 8px
+        &:hover
+            transform: translateY(-10px)
+            transition: all 0.3s ease-in-out
+            box-shadow: 0px 16px 13px -15px #c8c8c8

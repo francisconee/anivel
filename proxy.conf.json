@@ -1,0 +1,16 @@
+[{
+    "/api": {
+      "target": "http://localhost:80",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": "/app/api"  
+      }
+    }
+  },
+  {
+    "/ws": {
+      "target": "ws://localhost:3000",
+      "secure": false,
+      "ws": true
+    }
+  }]

@@ -1,0 +1,27 @@
+<div class="container">
+  <app-header></app-header>
+  <div *ngIf="detalle" class="detalle">
+    <img [src]="detalle.image" alt="{{ detalle.title }}" />
+    <div class="row mt-5">
+      <div class="col">
+        <h2>{{ detalle.title }}</h2>
+        <p>{{ detalle.subtitle }}</p>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <p class="tag">
+          <span>{{ detalle.type }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="row py-5">
+      <div class="col">
+        <p class="description">
+          {{ detalle.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid px-0">
+  <app-footer></app-footer>
+</div>

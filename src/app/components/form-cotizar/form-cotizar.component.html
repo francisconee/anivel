@@ -1,0 +1,108 @@
+<div class="prosupuesto">
+  <h4>SOLICITE SU PRESUPUESTO</h4>
+  <div class="card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-4">
+        <label for="nombre" class="d-none">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          formControlName="nombre"
+          placeholder="Nombre y Apellido"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            form.get('nombre')!.hasError('required') &&
+            form.get('nombre')!.touched
+          "
+          class="form-error"
+        >
+          Nombre es obligatorio.
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="email" class="d-none">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+          class="form-control"
+        />
+        <div
+          *ngIf="
+            form.get('email')!.hasError('required') &&
+            form.get('email')!.touched
+          "
+          class="form-error"
+        >
+          Email es obligatorio.
+        </div>
+        <div
+          *ngIf="
+            form.get('email')!.hasError('email') && form.get('email')!.touched
+          "
+          class="form-error"
+        >
+          Email no es válido.
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="telefono" class="d-none">Teléfono:</label>
+        <input
+          type="text"
+          id="telefono"
+          formControlName="telefono"
+          placeholder="Teléfono"
+          class="form-control"
+          pattern="[0-9+]*"
+        />
+        <div
+          *ngIf="
+            form.get('telefono')!.hasError('required') &&
+            form.get('telefono')!.touched
+          "
+          class="form-error"
+        >
+          Teléfono es obligatorio.
+        </div>
+        <div
+          *ngIf="
+            form.get('telefono')!.hasError('pattern') &&
+            form.get('telefono')!.touched
+          "
+          class="form-error"
+        >
+          Teléfono solo puede contener números.
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label for="descripcion" class="d-none">Descripción:</label>
+        <textarea
+          id="descripcion"
+          formControlName="descripcion"
+          placeholder="Descripción"
+          class="form-control"
+          rows="4"
+        ></textarea>
+        <div
+          *ngIf="
+            form.get('descripcion')!.hasError('required') &&
+            form.get('descripcion')!.touched
+          "
+          class="form-error"
+        >
+          Descripción es obligatoria.
+        </div>
+      </div>
+      <button
+        class="btn btn-primary w-100"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>

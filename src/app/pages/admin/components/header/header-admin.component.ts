@@ -15,7 +15,7 @@ export class HeaderAdminComponent {
   ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn();
+    console.log(this.userService.isLoggedIn)
   }
 
   onClick() {
@@ -26,8 +26,8 @@ export class HeaderAdminComponent {
       .catch(error => console.log(error));
   }
 
-  isLoggedIn(): boolean {
-    return this.userService.isLoggedIn();
+  isLoggedIn(){ 
+    return this.userService.isLoggedIn;
   }
 }
 

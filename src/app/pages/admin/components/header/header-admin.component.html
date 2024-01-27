@@ -1,8 +1,6 @@
 <header>
   <div class="box d-flex align-items-center w-100 justify-content-between">
-    <h6 *ngIf="router.url === '/admin'">
-      Administrador de contenidos {{ isLoggedIn | json }}
-    </h6>
+    <h6 *ngIf="router.url === '/admin'">Administrador de contenidos</h6>
     <h6 *ngIf="router.url === '/registrarse'">Registrarse</h6>
     <button
       *ngIf="isLoggedIn"

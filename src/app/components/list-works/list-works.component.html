@@ -1,0 +1,48 @@
+<section class="container py-5" id="trabajos">
+  <ng-container *ngIf="router.url != '/admin'">
+    <h4 class="title">Trabajos</h4>
+    <div class="row">
+      <div class="d-flex p-3 justify-content-center">
+        <ng-container *ngFor="let tipo of obtenerTiposUnicos()">
+          <button
+            class="btn btn-primary px-4 m-2"
+            (click)="filtrarPorTipo(tipo)"
+          >
+            {{ tipo }}
+          </button>
+        </ng-container>
+        <button
+          class="btn btn btn-outline-primary px-4 m-2 btn-filtro"
+          (click)="mostrarTodos()"
+        >
+          Mostrar todos
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <div class="row">
+    <div
+      *ngIf="loading"
+      class="d-flex justify-content-center align-items-center"
+      [style.height]="loading ? '400px' : '400px'"
+    >
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <ng-container *ngIf="!loading">
+      <ng-container *ngFor="let work of works">
+        <div class="col-3 mb-4" (click)="work.id && onCardClick(work.id)">
+          <app-card-work [work]="work"></app-card-work>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</section>

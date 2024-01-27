@@ -1,0 +1,14 @@
+<ul class="list-unstyled mb-0 d-flex contact align-items-center">
+  <li *ngFor="let item of contact; last as isLast">
+    <a
+      [href]="item.link"
+      class="text-decoration-none"
+      [ngClass]="{ 'me-0': isLast, 'me-4': !isLast }"
+      ><ng-container *ngIf="!item.icon">{{ item.name }}</ng-container>
+      <ng-container *ngIf="item.icon">
+        <img src="{{ item.iconUrl }}" alt="" />
+      </ng-container>
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
